@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO Meta Tags -->
+    <title>Explore India - Your Ultimate Travel Partner</title>
+    <meta name="description" content="Explore India offers the best travel packages, gallery of beautiful destinations, and expert tourism services across India.">
+    <meta name="keywords" content="Travel, Tourism, India, Tour Packages, Explore India">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .hero-gradient {
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1600&q=80');
+            background-size: cover; background-position: center;
+        }
+        .page-transition { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .nav-link.active { color: #f97316; border-bottom: 2px solid #f97316; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2 cursor-pointer" onclick="navigateTo('home')">
+                    <i data-lucide="map-pin" class="text-orange-500 w-8 h-8"></i>
+                    <span class="text-2xl font-bold text-gray-900">Explore <span class="text-orange-500">India</span></span>
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link font-medium hover:text-orange-500 transition-colors py-1 active" id="link-home">Home</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('packages')" class="nav-link font-medium hover:text-orange-500 transition-colors py-1" id="link-packages">Packages</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('gallery')" class="nav-link font-medium hover:text-orange-500 transition-colors py-1" id="link-gallery">Gallery</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('about')" class="nav-link font-medium hover:text-orange-500 transition-colors py-1" id="link-about">About</a>
+                    <a href="javascript:void(0)" onclick="navigateTo('contact')" class="nav-link font-medium hover:text-orange-500 transition-colors py-1" id="link-contact">Contact</a>
+                </div>
+
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-600 focus:outline-none">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-4 shadow-lg">
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="block font-medium hover:text-orange-500">Home</a>
+            <a href="javascript:void(0)" onclick="navigateTo('packages')" class="block font-medium hover:text-orange-500">Packages</a>
+            <a href="javascript:void(0)" onclick="navigateTo('gallery')" class="block font-medium hover:text-orange-500">Gallery</a>
+            <a href="javascript:void(0)" onclick="navigateTo('about')" class="block font-medium hover:text-orange-500">About</a>
+            <a href="javascript:void(0)" onclick="navigateTo('contact')" class="block font-medium hover:text-orange-500">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main id="content" class="flex-grow">
+        <!-- Home Page -->
+        <section id="page-home" class="page-transition">
+            <div class="hero-gradient h-[70vh] flex items-center justify-center text-center text-white px-4">
+                <div class="max-w-3xl">
+                    <h1 class="text-5xl md:text-7xl font-bold mb-6">Discover the Magic of India</h1>
+                    <p class="text-xl md:text-2xl mb-8 opacity-90">Experience the diversity from Himalayas to Kerala backwaters.</p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <button onclick="navigateTo('packages')" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-full font-semibold transition-all shadow-lg">View Packages</button>
+                        <button onclick="navigateTo('contact')" class="bg-white hover:bg-gray-100 text-gray-900 px-8 py-3 rounded-full font-semibold transition-all shadow-lg">Contact Us</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="max-w-7xl mx-auto py-16 px-4 text-center">
+                <h2 class="text-3xl font-bold mb-12">Our Core Values</h2>
+                <div class="grid md:grid-cols-3 gap-8 text-center">
+                    <div class="p-6 bg-white rounded-xl shadow-sm border">
+                        <i data-lucide="shield-check" class="text-orange-500 w-10 h-10 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">Safe Travel</h3>
+                        <p class="text-gray-600">Verified guides and safe transportation for every trip.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-sm border">
+                        <i data-lucide="gem" class="text-orange-500 w-10 h-10 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">Luxury Stay</h3>
+                        <p class="text-gray-600">Hand-picked premium hotels across the country.</p>
+                    </div>
+                    <div class="p-6 bg-white rounded-xl shadow-sm border">
+                        <i data-lucide="headset" class="text-orange-500 w-10 h-10 mx-auto mb-4"></i>
+                        <h3 class="font-bold text-xl mb-2">24/7 Support</h3>
+                        <p class="text-gray-600">We are here to help you anytime during your journey.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Page -->
+        <section id="page-packages" class="hidden page-transition py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12">Popular Packages</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?w=800" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Rajasthan Royal</h3>
+                            <p class="text-gray-600 mb-4">Forts and Palaces of Jaipur & Udaipur.</p>
+                            <div class="flex justify-between items-center font-bold">
+                                <span>₹24,999</span>
+                                <button class="text-orange-500">Book</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?w=800" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Kerala Backwaters</h3>
+                            <p class="text-gray-600 mb-4">Serene houseboat tours in Alleppey.</p>
+                            <div class="flex justify-between items-center font-bold">
+                                <span>₹18,500</span>
+                                <button class="text-orange-500">Book</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl overflow-hidden shadow-md">
+                        <img src="https://images.unsplash.com/photo-1506461883276-594a12b11cf3?w=800" class="h-48 w-full object-cover">
+                        <div class="p-6">
+                            <h3 class="font-bold text-xl mb-2">Ladakh Heights</h3>
+                            <p class="text-gray-600 mb-4">Mountain adventure in Leh-Ladakh.</p>
+                            <div class="flex justify-between items-center font-bold">
+                                <span>₹32,000</span>
+                                <button class="text-orange-500">Book</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Page -->
+        <section id="page-gallery" class="hidden page-transition py-16 px-4">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="text-4xl font-bold text-center mb-12">Photo Gallery</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                    <img src="https://images.unsplash.com/photo-1564507592333-c60657451ddc?w=600" class="rounded-lg shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1514222134-b57cbb8ce073?w=600" class="rounded-lg shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1590050752117-23a9d7fc217d?w=600" class="rounded-lg shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1593181629936-11c609b8db9b?w=600" class="rounded-lg shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1598333333555-460f64c63283?w=600" class="rounded-lg shadow-sm">
+                    <img src="https://images.unsplash.com/photo-1610116303244-6239f88c8a11?w=600" class="rounded-lg shadow-sm">
+                </div>
+            </div>
+        </section>
+
+        <!-- About Page -->
+        <section id="page-about" class="hidden page-transition py-16 px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl font-bold mb-6">About Explore India</h2>
+                <p class="text-lg text-gray-600 mb-8">We are a dedicated team of travelers helping you explore the hidden gems of India. With 10+ years of experience, we provide safe and memorable tours.</p>
+                <div class="bg-orange-50 p-8 rounded-2xl border border-orange-200">
+                    <p class="font-bold text-orange-600">Contact Number: +91 87700 96858</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Page -->
+        <section id="page-contact" class="hidden page-transition py-16 px-4">
+            <div class="max-w-xl mx-auto bg-white p-8 rounded-2xl shadow-lg border">
+                <h2 class="text-3xl font-bold text-center mb-8">Send an Inquiry</h2>
+                <form onsubmit="handleContact(event)" class="space-y-4">
+                    <input type="text" placeholder="Name" required class="w-full p-3 rounded-lg border">
+                    <input type="email" placeholder="Email" required class="w-full p-3 rounded-lg border">
+                    <textarea placeholder="Message" rows="4" class="w-full p-3 rounded-lg border"></textarea>
+                    <button type="submit" class="w-full bg-orange-500 text-white font-bold py-3 rounded-lg">Submit</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-8 px-4 text-center">
+        <p class="mb-2 font-bold">Explore India</p>
+        <p class="text-gray-500 text-sm mb-4">Contact: +91 87700 96858</p>
+        <div class="flex justify-center gap-6 text-gray-400 text-sm">
+            <button onclick="navigateTo('home')">Home</button>
+            <button onclick="navigateTo('packages')">Packages</button>
+            <button onclick="navigateTo('contact')">Contact</button>
+        </div>
+    </footer>
+
+    <script>
+        // Start Lucide
+        lucide.createIcons();
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        function navigateTo(pageId) {
+            const pages = ['home', 'packages', 'gallery', 'about', 'contact'];
+            
+            pages.forEach(p => {
+                const pageEl = document.getElementById('page-' + p);
+                const linkEl = document.getElementById('link-' + p);
+                
+                if (pageEl) pageEl.classList.add('hidden');
+                if (linkEl) linkEl.classList.remove('active');
+            });
+
+            const targetPage = document.getElementById('page-' + pageId);
+            const targetLink = document.getElementById('link-' + pageId);
+            
+            if (targetPage) targetPage.classList.remove('hidden');
+            if (targetLink) targetLink.classList.add('active');
+
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo(0, 0);
+        }
+
+        function handleContact(e) {
+            e.preventDefault();
+            alert("Thank you! We will contact you at +91 87700 96858 soon.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
+
